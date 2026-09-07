@@ -1,0 +1,14 @@
+TinyUSB vendored sources — DO NOT EDIT (port glue lives in src/GigaTinyUSB/).
+Upstream: https://github.com/hathach/tinyusb
+Pinned commit: 1adfb1c74ff3cc6618a9b37e76ab2feadc09f8e8 (master, 2026-09-03)
+License: MIT (see LICENSE).
+
+Pruned for Giga USB-A host-only builds (files untouched, directories dropped):
+  kept: tusb.c/h, tusb_option.h, common/, osal/, host/, class/cdc/ (minus
+        cdc_device.c), portable/synopsys/dwc2/ (minus dcd_dwc2.c and
+        non-STM32 dwc2_*.h)
+  added later: class/midi/ (incl. guarded-out midi_device.c),
+        class/audio/audio.h (types required by midi_host.h),
+        class/hid/ (incl. guarded-out hid_device.c)
+  dropped: class/{audio,bth,dfu,hid,midi,msc,mtp,net,printer,usbtmc,vendor,
+        video}, device/, typec/, other portable/ ports, build files
